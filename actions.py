@@ -13,7 +13,7 @@ from rasa_core_sdk import Action
 logger = logging.getLogger(__name__)
 
 API_URL= "https://cricapi.com/api/"
-API_KEY="96Wb94tmIYhlje0VbloSnf0weN52"
+API_KEY="   "
 
 class ApiAction(Action):
 	def name(self):
