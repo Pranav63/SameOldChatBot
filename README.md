@@ -1,6 +1,4 @@
-﻿# Build your first Chatbot for getting IPL updates using the Rasa Stack 
-
-This is the **Practice Version** which means that you will find much of the code is missing and you will have to write it yourself.
+﻿# Build your Chatbot to get your favourite cricket match scores.
 
 ## Setup and installation
 
