@@ -1,6 +1,6 @@
 ﻿# Build your Chatbot to get your favourite cricket match scores.
 
-## Setup and installation
+## Setup 
 
 If you haven’t installed Rasa NLU and Rasa Core yet, you can do it by navigating to the project directory and running:  
 ```
@@ -13,11 +13,11 @@ You also need to install a spaCy English language model. You can install it by r
 python -m spacy download en
 ```
 
-### Files for Rasa NLU model
+### Rasa NLU model files
 
 - **data/nlu_data.md** file contents training data for the NLU model.
 	
-- **nlu_config.yml** file contains the configuration of the Rasa NLU pipeline:  
+- **nlu_config.yml** Config for RASA NLU pipeline  
 ```yaml
 language: "en"
 
@@ -26,8 +26,8 @@ pipeline: spacy_sklearn
 
 ### Files for Rasa Core model
 
-- **data/stories.md** file contains some training stories which represent the conversations between a user and the assistant. 
-- **domain.yml** file describes the domain of the assistant which includes intents, entities, slots, templates and actions the assistant should be aware of.  
+- **data/stories.md** training stories which represent the conversations between a user and the assistant. 
+- **domain.yml** file describes the domain of the assistant which includes intents, entities, slots, templates and actions for the assistant to understand.  
 - **actions.py** file contains the code of a custom action which retrieves results of the latest IPL match by making an external API call.
 - **endpoints.yml** file contains the webhook configuration for custom action.  
 - **policies.yml** file contains the configuration of the training policies for Rasa Core model.
@@ -55,7 +55,7 @@ This will load the assistant in your terminal for you to chat.
 ## How to deploy to Slack
 
 1. Go to your Slack app's settings page and use the **Bot User OAuth Access Token:** 
-![](../images/bot_token.png)
+
 And add this in the **slack_credentials.yml** file:
 
 ```python
@@ -75,9 +75,6 @@ make action-server
 ```
 ngrok http 5055
 ```
-
-This will give you an output like the following:
-![](../images/ngrok_action.png)
 
 4. Copy the highlighted url in the above image into your **endpoints.yml** file:
 
@@ -105,6 +102,3 @@ ngrok http 5002
 ```
 your_url_here/webhooks/slack/webhook
 ```
-
-![](../images/event_subs.png)
-And you should now be able to talk to your chatbot in Slack!
